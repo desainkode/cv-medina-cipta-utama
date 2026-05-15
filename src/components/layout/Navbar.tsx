@@ -29,9 +29,9 @@ export function Navbar() {
     },
     { label: t('nav_services'), hasDropdown: true, children: [{ label: t('nav_services_web'), href: '/layanan/website' }, { label: t('nav_services_atk'), href: '/layanan/atk' }] },
     { label: t('nav_products'), hasDropdown: false, href: '/produk' },
-    { label: t('nav_portfolio'), hasDropdown: false, href: '/#portfolio' },
-    { label: t('nav_clients'), hasDropdown: false, href: '/#klien' },
-    { label: t('nav_testimonials'), hasDropdown: false, href: '/#testimoni' },
+    { label: t('nav_portfolio'), hasDropdown: false, href: '/portfolio' },
+    { label: t('nav_clients'), hasDropdown: false, href: '/klien' },
+    { label: t('nav_testimonials'), hasDropdown: false, href: '/testimoni' },
     { label: t('nav_blog'), hasDropdown: false, href: '/#blog' },
     { label: t('nav_contact'), hasDropdown: false, href: '/#kontak' },
   ];

@@ -1,15 +1,20 @@
 "use client";
 
 import { useLanguage } from '@/contexts/LanguageContext';
-import { MousePointer2, Rocket, Layout, Database, CheckCircle2 } from 'lucide-react';
+import { MousePointer2, Rocket, Layout, Database, CheckCircle2, MessageSquare, ChevronRight, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 export function WebServiceHero() {
   const { t } = useLanguage();
   return (
     <section className="relative w-full min-h-[85vh] flex items-center pt-32 md:pt-40 pb-16 px-6 md:px-[80px] bg-[#0a0a0a] overflow-hidden">
-      {/* Background elements */}
       <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center animate-fade-in opacity-20 scale-105"
+          style={{ backgroundImage: 'url("/images/bgperkantoraan.jpg")' }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent z-10"></div>
+        
         {/* Background Watermark */}
         <div className="absolute bottom-[-10%] right-[-5%] text-white/[0.05] font-black text-[25vw] leading-none select-none pointer-events-none z-0">
           MCU
@@ -25,7 +30,7 @@ export function WebServiceHero() {
           <div className="w-full lg:w-1/2 flex flex-col items-start animate-fade-up">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
-              <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">Premium Service</span>
+              <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('web_hero_tag')}</span>
             </div>
             <h1 className="text-white text-3xl md:text-[42px] lg:text-[55px] font-black leading-tight tracking-tighter mb-8">
               {t('web_hero_title')}
@@ -34,12 +39,22 @@ export function WebServiceHero() {
               {t('web_hero_subtitle')}
             </p>
             
-            <div className="flex flex-wrap gap-4">
-              <Link href="#" className="bg-[#b31b2c] text-white px-8 py-4 rounded-2xl font-bold text-base hover:bg-red-700 transition-all shadow-[0_10px_30px_rgba(179,27,44,0.3)] hover:-translate-y-1">
+            <div className="flex flex-wrap gap-5">
+              <Link 
+                href="https://wa.me/6285804611938" 
+                target="_blank"
+                className="bg-[#b31b2c] text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-[#b31b2c] transition-all shadow-2xl hover:-translate-y-2 flex items-center gap-2"
+              >
+                <MessageSquare className="w-4 h-4" />
                 {t('nav_consult')}
               </Link>
-              <Link href="/#portfolio" className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-2xl font-bold text-base hover:bg-white/10 transition-all hover:-translate-y-1">
-                {t('portfolio_tag')}
+              <Link 
+                href="https://wa.me/6285804611938" 
+                target="_blank"
+                className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all shadow-2xl hover:-translate-y-2 flex items-center gap-2"
+              >
+                <Phone className="w-4 h-4 text-[#b31b2c]" />
+                {t('nav_contact_us')}
               </Link>
             </div>
 
@@ -47,15 +62,15 @@ export function WebServiceHero() {
             <div className="mt-12 flex flex-wrap gap-6 text-white/50 text-xs font-bold uppercase tracking-widest">
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-[#b31b2c]" />
-                <span>Responsive Design</span>
+                <span>{t('web_benefit_1')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-[#b31b2c]" />
-                <span>SEO Optimized</span>
+                <span>{t('web_benefit_2')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-[#b31b2c]" />
-                <span>High Performance</span>
+                <span>{t('web_benefit_3')}</span>
               </div>
             </div>
           </div>
@@ -78,7 +93,7 @@ export function WebServiceHero() {
                   <Rocket className="text-white" />
                 </div>
                 <div>
-                  <div className="text-white font-bold text-sm">Optimization</div>
+                  <div className="text-white font-bold text-sm">{t('web_hero_opt')}</div>
                   <div className="text-white/50 text-[10px]">Page Speed 100%</div>
                 </div>
               </div>
@@ -90,8 +105,8 @@ export function WebServiceHero() {
                   <Layout className="text-[#b31b2c]" />
                 </div>
                 <div>
-                  <div className="text-white font-bold text-sm">Responsive</div>
-                  <div className="text-white/50 text-[10px]">UI/UX Designed</div>
+                  <div className="text-white font-bold text-sm">{t('web_hero_responsive')}</div>
+                  <div className="text-white/50 text-[10px]">{t('web_hero_uiux')}</div>
                 </div>
               </div>
             </div>

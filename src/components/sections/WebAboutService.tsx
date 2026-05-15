@@ -22,7 +22,7 @@ export function WebAboutService() {
           <div className="w-full lg:w-1/2">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
-              <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">Why It Matters</span>
+              <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('web_about_tag')}</span>
             </div>
             <h2 className="text-white text-3xl md:text-4xl font-black leading-tight tracking-tight mb-8">
               {t('web_about_title')}
@@ -30,14 +30,14 @@ export function WebAboutService() {
             <p className="text-white/70 text-base leading-relaxed font-medium mb-10">
               {t('web_about_desc')}
             </p>
-
+ 
             {/* Grid of Benefits */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { icon: TrendingUp, text: "Meningkatkan Kredibilitas" },
-                { icon: Globe, text: "Jangkauan Pasar Luas" },
-                { icon: Zap, text: "Pemasaran 24/7" },
-                { icon: ShieldCheck, text: "Kepercayaan Pelanggan" }
+                { icon: TrendingUp, text: t('web_about_item1') },
+                { icon: Globe, text: t('web_about_item2') },
+                { icon: Zap, text: t('web_about_item3') },
+                { icon: ShieldCheck, text: t('web_about_item4') }
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4 text-white/80 group">
                   <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#b31b2c] transition-colors">

@@ -24,7 +24,7 @@ export function WebTechStack() {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
-            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">Stack</span>
+            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('web_stack_tag')}</span>
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
           </div>
           <h2 className="text-white text-3xl md:text-4xl font-black tracking-tight">{t('web_tech_title')}</h2>

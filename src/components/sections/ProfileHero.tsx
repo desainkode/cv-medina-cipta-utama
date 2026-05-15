@@ -45,7 +45,7 @@ export function ProfileHero() {
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6 animate-fade-up [animation-delay:100ms]">
               <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
-              <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">Trusted Partner</span>
+              <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('profile_hero_tag')}</span>
             </div>
             <h1 className="text-white text-3xl md:text-[42px] lg:text-[55px] font-black leading-tight tracking-tighter mb-8 animate-fade-up [animation-delay:200ms]">
               {t('profile_hero_title')}
@@ -58,15 +58,15 @@ export function ProfileHero() {
             <div className="flex flex-wrap gap-6 animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group">
                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#b31b2c] transition-all">
-                  <Award className="text-[#b31b2c] group-hover:text-white" size={20} />
+                   <Award className="text-[#b31b2c] group-hover:text-white" size={20} />
                 </div>
-                <span className="text-white/60 text-xs font-bold uppercase tracking-widest">Quality Service</span>
+                <span className="text-white/60 text-xs font-bold uppercase tracking-widest">{t('profile_hero_badge1')}</span>
               </div>
               <div className="flex items-center gap-3 group">
                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#b31b2c] transition-all">
                   <ShieldCheck className="text-[#b31b2c] group-hover:text-white" size={20} />
                 </div>
-                <span className="text-white/60 text-xs font-bold uppercase tracking-widest">Legal & Trusted</span>
+                <span className="text-white/60 text-xs font-bold uppercase tracking-widest">{t('profile_hero_badge2')}</span>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ export function ProfileHero() {
                 </div>
                 <div>
                   <div className="text-white font-black text-2xl">50+</div>
-                  <div className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Corporate Clients</div>
+                  <div className="text-white/40 text-[10px] font-bold uppercase tracking-widest">{t('profile_hero_stats_clients')}</div>
                 </div>
               </div>
               
@@ -93,17 +93,17 @@ export function ProfileHero() {
               
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <div className="text-white font-bold text-lg mb-1">Established</div>
+                  <div className="text-white font-bold text-lg mb-1">{t('profile_hero_stats_established')}</div>
                   <div className="text-[#b31b2c] font-black text-xl italic">2019</div>
                 </div>
                 <div>
-                  <div className="text-white font-bold text-lg mb-1">Projects</div>
+                  <div className="text-white font-bold text-lg mb-1">{t('profile_hero_stats_projects')}</div>
                   <div className="text-[#b31b2c] font-black text-xl italic">100+</div>
                 </div>
               </div>
               
               <Link href="/#kontak" className="w-full py-4 bg-white/5 border border-white/10 rounded-2xl text-white font-bold text-center hover:bg-white/10 transition-all text-sm uppercase tracking-widest">
-                Get in Touch
+                {t('profile_hero_cta')}
               </Link>
             </div>
           </div>
@@ -112,7 +112,7 @@ export function ProfileHero() {
           <div className="absolute -top-6 -right-6 md:-top-10 md:-right-10 bg-gradient-to-br from-[#b31b2c] to-[#7a121d] p-6 rounded-3xl shadow-2xl animate-bounce hidden sm:block z-20">
             <div className="text-white font-black text-center">
               <div className="text-2xl">100%</div>
-              <div className="text-[10px] uppercase tracking-widest opacity-80">Commitment</div>
+              <div className="text-[10px] uppercase tracking-widest opacity-80">{t('profile_hero_commitment')}</div>
             </div>
           </div>
         </div>

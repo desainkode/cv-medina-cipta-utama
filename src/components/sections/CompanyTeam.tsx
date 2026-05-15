@@ -4,13 +4,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Mail, Link as LinkIcon } from 'lucide-react';
 
 export function CompanyTeam() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const team = [
-    { name: 'Ahmad Faisal', role: 'Chief Executive Officer', image: '/images/perkantoran-website.jpg' },
-    { name: 'Sarah Amanda', role: 'Operations Manager', image: '/images/bgperkantoraan.jpg' },
-    { name: 'Rizky Putra', role: 'Head of Digital', image: '/images/perkantoran-website.jpg' },
-    { name: 'Diana Putri', role: 'Client Relations', image: '/images/bgperkantoraan.jpg' },
+    { name: 'Ahmad Faisal', role: language === 'id' ? 'Direktur Utama' : 'Chief Executive Officer', image: '/images/perkantoran-website.jpg' },
+    { name: 'Sarah Amanda', role: language === 'id' ? 'Manajer Operasional' : 'Operations Manager', image: '/images/bgperkantoraan.jpg' },
+    { name: 'Rizky Putra', role: language === 'id' ? 'Kepala Digital' : 'Head of Digital', image: '/images/perkantoran-website.jpg' },
+    { name: 'Diana Putri', role: language === 'id' ? 'Hubungan Klien' : 'Client Relations', image: '/images/bgperkantoraan.jpg' },
   ];
 
   return (
@@ -21,7 +21,7 @@ export function CompanyTeam() {
         <div className="flex flex-col items-center text-center mb-20">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
-            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">Executive</span>
+            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('profile_team_tag')}</span>
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
           </div>
           <h2 className="text-white text-3xl md:text-4xl font-black tracking-tight">{t('profile_team_title')}</h2>

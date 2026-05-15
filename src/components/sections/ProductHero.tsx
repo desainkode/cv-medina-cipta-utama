@@ -2,7 +2,7 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
 import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, MessageSquare, Phone } from 'lucide-react';
 
 export function ProductHero() {
   const { t } = useLanguage();
@@ -30,29 +30,39 @@ export function ProductHero() {
         {/* Breadcrumb */}
         <nav className="flex items-center gap-3 mb-8 animate-fade-up">
           <Link href="/" className="text-white/40 hover:text-white transition-colors text-[10px] font-black uppercase tracking-[0.3em]">
-            Home
+            {t('nav_home')}
           </Link>
           <div className="w-4 h-[1px] bg-[#b31b2c]"></div>
           <span className="text-white text-[10px] font-black uppercase tracking-[0.3em]">
-            Produk ATK
+            {t('prod_breadcrumb_current')}
           </span>
         </nav>
 
         <div className="max-w-3xl">
           <h1 className="text-white text-3xl md:text-[42px] lg:text-[55px] font-black leading-[1.1] tracking-tighter mb-6 animate-fade-up [animation-delay:100ms]">
-            Produk <br />
-            <span className="text-[#b31b2c]">Alat Tulis Kantor</span>
+            {t('prod_hero_title_1')} <br />
+            <span className="text-[#b31b2c]">{t('prod_hero_title_2')}</span>
           </h1>
           <p className="text-white/60 text-sm md:text-base lg:text-lg font-medium leading-relaxed max-w-2xl mb-10 animate-fade-up [animation-delay:200ms]">
-            Berbagai kebutuhan alat tulis dan perlengkapan kantor berkualitas untuk mendukung produktivitas bisnis Anda.
+            {t('prod_hero_subtitle')}
           </p>
 
           <div className="flex flex-wrap gap-5 animate-fade-up [animation-delay:300ms]">
-            <Link href="#" className="bg-[#b31b2c] text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-[#b31b2c] transition-all shadow-2xl hover:-translate-y-2">
-              Hubungi Kami
+            <Link 
+              href="https://wa.me/6285804611938" 
+              target="_blank"
+              className="bg-[#b31b2c] text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-[#b31b2c] transition-all shadow-2xl hover:-translate-y-2 flex items-center gap-2"
+            >
+              <MessageSquare className="w-4 h-4" />
+              {t('nav_consult')}
             </Link>
-            <Link href="#" className="bg-white/5 border border-white/10 backdrop-blur-md text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all shadow-2xl hover:-translate-y-2">
-              Konsultasi Produk
+            <Link 
+              href="https://wa.me/6285804611938" 
+              target="_blank"
+              className="bg-white/5 border border-white/10 backdrop-blur-md text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all shadow-2xl hover:-translate-y-2 flex items-center gap-2"
+            >
+              <Phone className="w-4 h-4 text-[#b31b2c]" />
+              {t('nav_contact_us')}
             </Link>
           </div>
         </div>

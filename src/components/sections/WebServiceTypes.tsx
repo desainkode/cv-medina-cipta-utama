@@ -7,12 +7,12 @@ export function WebServiceTypes() {
   const { t } = useLanguage();
   
   const types = [
-    { title: "Company Profile", icon: Building2, desc: "Website perusahaan modern, profesional, dan responsive untuk branding bisnis." },
-    { title: "Landing Page", icon: MousePointerClick, desc: "Website promosi produk atau jasa yang dioptimalkan untuk konversi marketing." },
-    { title: "Toko Online", icon: ShoppingBag, desc: "E-commerce modern dengan katalog produk, shopping cart, dan sistem pembayaran." },
-    { title: "Website Sekolah", icon: GraduationCap, desc: "Platform informasi sekolah, portal berita, dan sistem PPDB online." },
-    { title: "Sistem Informasi", icon: LayoutPanelLeft, desc: "Dashboard admin custom untuk manajemen data dan efisiensi operasional." },
-    { title: "Website Custom", icon: Code2, desc: "Solusi website dengan fitur khusus yang dirancang sesuai kebutuhan unik bisnis Anda." }
+    { title: t('web_type1_title'), icon: Building2, desc: t('web_type1_desc') },
+    { title: t('web_type2_title'), icon: MousePointerClick, desc: t('web_type2_desc') },
+    { title: t('web_type3_title'), icon: ShoppingBag, desc: t('web_type3_desc') },
+    { title: t('web_type4_title'), icon: GraduationCap, desc: t('web_type4_desc') },
+    { title: t('web_type5_title'), icon: LayoutPanelLeft, desc: t('web_type5_desc') },
+    { title: t('web_type6_title'), icon: Code2, desc: t('web_type6_desc') }
   ];
 
   return (
@@ -23,7 +23,7 @@ export function WebServiceTypes() {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-[1.5px] bg-[#b31b2c]"></div>
-            <span className="text-[#b31b2c] font-black text-[10px] tracking-[0.3em] uppercase italic">Solutions</span>
+            <span className="text-[#b31b2c] font-black text-[10px] tracking-[0.3em] uppercase italic">{t('web_types_tag')}</span>
             <div className="w-8 h-[1.5px] bg-[#b31b2c]"></div>
           </div>
           <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight italic">{t('web_types_title')}</h2>

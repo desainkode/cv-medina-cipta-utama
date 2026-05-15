@@ -7,11 +7,11 @@ export function WebWorkflow() {
   const { t } = useLanguage();
   
   const steps = [
-    { title: "Konsultasi", icon: MessageCircle, desc: "Diskusi kebutuhan bisnis dan penentuan strategi website." },
-    { title: "Desain UI/UX", icon: Palette, desc: "Pembuatan mockup desain yang modern dan user-friendly." },
-    { title: "Development", icon: Code, desc: "Proses koding dan integrasi fitur sesuai spesifikasi." },
-    { title: "Revisi", icon: RefreshCcw, desc: "Pengecekan bersama dan perbaikan detail sesuai masukan." },
-    { title: "Launching", icon: Rocket, desc: "Website siap online dan serah terima data akses." }
+    { title: t('web_step1_title'), icon: MessageCircle, desc: t('web_step1_desc') },
+    { title: t('web_step2_title'), icon: Palette, desc: t('web_step2_desc') },
+    { title: t('web_step3_title'), icon: Code, desc: t('web_step3_desc') },
+    { title: t('web_step4_title'), icon: RefreshCcw, desc: t('web_step4_desc') },
+    { title: t('web_step5_title'), icon: Rocket, desc: t('web_step5_desc') }
   ];
 
   return (
@@ -22,7 +22,7 @@ export function WebWorkflow() {
         <div className="flex flex-col items-center text-center mb-20">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
-            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">Process</span>
+            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('web_flow_tag')}</span>
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
           </div>
           <h2 className="text-white text-3xl md:text-4xl font-black tracking-tight">{t('web_flow_title')}</h2>

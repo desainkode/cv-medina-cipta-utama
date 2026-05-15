@@ -9,26 +9,11 @@ export function AtkFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
-    { 
-      q: "Apakah bisa pembelian grosir?", 
-      a: "Tentu! Kami melayani pembelian retail maupun grosir dengan harga khusus untuk pesanan dalam jumlah besar bagi perusahaan dan instansi." 
-    },
-    { 
-      q: "Apakah melayani pengiriman?", 
-      a: "Ya, kami melayani pengiriman ke seluruh wilayah Bandung Raya secara gratis untuk pesanan dengan nominal tertentu, dan menggunakan ekspedisi untuk luar kota." 
-    },
-    { 
-      q: "Bagaimana cara pemesanan?", 
-      a: "Pemesanan dapat dilakukan dengan menghubungi admin kami melalui WhatsApp dengan menyertakan daftar produk dan jumlah yang dibutuhkan." 
-    },
-    { 
-      q: "Apakah stok selalu tersedia?", 
-      a: "Kami selalu menjaga ketersediaan stok untuk produk-produk populer. Namun, untuk kepastian stok dalam jumlah besar, silakan konfirmasi terlebih dahulu." 
-    },
-    { 
-      q: "Apakah bisa request produk tertentu?", 
-      a: "Jika produk yang Anda cari tidak ada di katalog, Anda dapat menghubungi kami untuk pengadaan khusus (*special order*)." 
-    },
+    { q: t('atk_faq1_q'), a: t('atk_faq1_a') },
+    { q: t('atk_faq2_q'), a: t('atk_faq2_a') },
+    { q: t('atk_faq3_q'), a: t('atk_faq3_a') },
+    { q: t('atk_faq4_q'), a: t('atk_faq4_a') },
+    { q: t('atk_faq5_q'), a: t('atk_faq5_a') },
   ];
 
   return (
@@ -39,7 +24,7 @@ export function AtkFaq() {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-4">
             <HelpCircle className="text-[#b31b2c] w-6 h-6" />
-            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">FAQ</span>
+            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('atk_faq_tag')}</span>
           </div>
           <h2 className="text-white text-3xl md:text-4xl font-black tracking-tight">{t('atk_faq_title')}</h2>
         </div>

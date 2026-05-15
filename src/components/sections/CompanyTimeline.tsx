@@ -7,11 +7,11 @@ export function CompanyTimeline() {
   const { t } = useLanguage();
   
   const events = [
-    { year: '2019', title: 'Founding Year', desc: 'Started as a trusted local office supplies provider in Bandung.', status: 'completed' },
-    { year: '2021', title: 'Digital Transformation', desc: 'Expanded services into professional website development and IT consultation.', status: 'completed' },
-    { year: '2022', title: 'Expanding Clients', desc: 'Successfully handled over 50+ corporate and government projects.', status: 'completed' },
-    { year: '2023', title: 'Service Integration', desc: 'Merged digital and office solutions into a unified strategic business model.', status: 'completed' },
-    { year: '2024', title: 'Market Leader', desc: 'Becoming a premier choice for local and national business digital transformation.', status: 'current' },
+    { year: '2019', title: t('timeline_event1_title'), desc: t('timeline_event1_desc'), status: 'completed' },
+    { year: '2021', title: t('timeline_event2_title'), desc: t('timeline_event2_desc'), status: 'completed' },
+    { year: '2022', title: t('timeline_event3_title'), desc: t('timeline_event3_desc'), status: 'completed' },
+    { year: '2023', title: t('timeline_event4_title'), desc: t('timeline_event4_desc'), status: 'completed' },
+    { year: '2024', title: t('timeline_event5_title'), desc: t('timeline_event5_desc'), status: 'current' },
   ];
 
   return (
@@ -22,7 +22,7 @@ export function CompanyTimeline() {
         <div className="flex flex-col items-center text-center mb-20">
           <div className="flex items-center gap-3 mb-4">
             <History className="text-[#b31b2c] w-6 h-6" />
-            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">History</span>
+            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('profile_history_tag')}</span>
           </div>
           <h2 className="text-white text-3xl md:text-4xl font-black tracking-tight">{t('profile_timeline_title')}</h2>
         </div>

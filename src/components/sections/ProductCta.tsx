@@ -2,8 +2,10 @@
 
 import { MessageCircle, PhoneCall } from 'lucide-react';
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export function ProductCta() {
+  const { t } = useLanguage();
   return (
     <section className="py-16 px-6 md:px-[80px] bg-[#0a0a0a] relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
@@ -23,12 +25,12 @@ export function ProductCta() {
             </div>
 
             <h2 className="text-white text-2xl md:text-4xl font-black leading-tight tracking-tight mb-6 max-w-3xl italic">
-              Butuh Produk ATK untuk <br />
-              <span className="text-white/60">Kantor Anda?</span>
+              {t('testi_cta_title_1')} <br />
+              <span className="text-white/60">{t('testi_cta_title_2')}</span>
             </h2>
             
             <p className="text-white/80 text-sm md:text-base font-medium mb-10 max-w-2xl leading-relaxed">
-              Hubungi CV Medina Cipta Utama untuk pemenuhan kebutuhan alat tulis dan perlengkapan kantor bisnis Anda dengan harga terbaik.
+              {t('testi_cta_desc')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
@@ -38,13 +40,13 @@ export function ProductCta() {
                 className="flex items-center justify-center gap-2 bg-white text-[#b31b2c] px-8 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-gray-100 transition-all shadow-xl hover:-translate-y-1"
               >
                 <MessageCircle size={18} />
-                <span>Hubungi WhatsApp</span>
+                <span>{t('nav_contact_us')}</span>
               </Link>
               <Link 
                 href="#" 
                 className="flex items-center justify-center gap-2 bg-transparent text-white border-2 border-white/30 px-8 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all shadow-xl hover:-translate-y-1"
               >
-                <span>Konsultasi Produk</span>
+                <span>{t('prod_hero_cta_consult')}</span>
               </Link>
             </div>
           </div>

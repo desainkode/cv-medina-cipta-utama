@@ -4,15 +4,39 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { PenTool, FileText, Briefcase, Printer, FolderOpen, Settings2 } from 'lucide-react';
 
 export function AtkCategories() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const categories = [
-    { title: "Alat Tulis", icon: PenTool, items: ["Pena", "Pensil", "Spidol", "Penghapus"] },
-    { title: "Kertas & Buku", icon: FileText, items: ["Kertas HVS", "Buku Tulis", "Sticky Notes", "Agenda"] },
-    { title: "Peralatan Kantor", icon: Briefcase, items: ["Stapler", "Punch Hole", "Cutter", "Gunting"] },
-    { title: "Printer & Tinta", icon: Printer, items: ["Printer", "Cartridge", "Tinta Printer", "Toner"] },
-    { title: "Map & Arsip", icon: FolderOpen, items: ["Map Dokumen", "Ordner", "Binder", "File Organizer"] },
-    { title: "Perlengkapan Operasional", icon: Settings2, items: ["Whiteboard", "Kalender", "Label", "Kebutuhan Lain"] }
+    { 
+      title: t('atk_cat1_title'), 
+      icon: PenTool, 
+      items: language === 'id' ? ["Pena", "Pensil", "Spidol", "Penghapus"] : ["Pen", "Pencil", "Marker", "Eraser"] 
+    },
+    { 
+      title: t('atk_cat2_title'), 
+      icon: FileText, 
+      items: language === 'id' ? ["Kertas HVS", "Buku Tulis", "Sticky Notes", "Agenda"] : ["HVS Paper", "Notebook", "Sticky Notes", "Agenda"] 
+    },
+    { 
+      title: t('atk_cat3_title'), 
+      icon: Briefcase, 
+      items: language === 'id' ? ["Stapler", "Punch Hole", "Cutter", "Gunting"] : ["Stapler", "Punch Hole", "Cutter", "Scissors"] 
+    },
+    { 
+      title: t('atk_cat4_title'), 
+      icon: Printer, 
+      items: language === 'id' ? ["Printer", "Cartridge", "Tinta Printer", "Toner"] : ["Printer", "Cartridge", "Printer Ink", "Toner"] 
+    },
+    { 
+      title: t('atk_cat5_title'), 
+      icon: FolderOpen, 
+      items: language === 'id' ? ["Map Dokumen", "Ordner", "Binder", "File Organizer"] : ["Document Folder", "Binder", "Ring Binder", "File Organizer"] 
+    },
+    { 
+      title: t('atk_cat6_title'), 
+      icon: Settings2, 
+      items: language === 'id' ? ["Whiteboard", "Kalender", "Label", "Kebutuhan Lain"] : ["Whiteboard", "Calendar", "Label", "Other Needs"] 
+    }
   ];
 
   return (
@@ -23,7 +47,7 @@ export function AtkCategories() {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-[1.5px] bg-[#b31b2c]"></div>
-            <span className="text-[#b31b2c] font-black text-[10px] tracking-[0.3em] uppercase italic">Categories</span>
+            <span className="text-[#b31b2c] font-black text-[10px] tracking-[0.3em] uppercase italic">{t('atk_cat_tag')}</span>
             <div className="w-8 h-[1.5px] bg-[#b31b2c]"></div>
           </div>
           <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight italic">{t('atk_cat_title')}</h2>

@@ -7,12 +7,12 @@ export function AtkFeaturedProducts() {
   const { t } = useLanguage();
   
   const products = [
-    { name: "Kertas HVS A4 80gsm", price: "55.000", img: "/images/bgperkantoraan.jpg", rating: 5 },
-    { name: "Pena Gel Premium Black", price: "12.000", img: "/images/bgperkantoraan.jpg", rating: 4.8 },
-    { name: "Ordner Folio PVC", price: "28.500", img: "/images/bgperkantoraan.jpg", rating: 4.9 },
-    { name: "Tinta Printer L-Series", price: "95.000", img: "/images/bgperkantoraan.jpg", rating: 5 },
-    { name: "Stapler HD-50", price: "45.000", img: "/images/bgperkantoraan.jpg", rating: 4.7 },
-    { name: "Sticky Notes Neon", price: "8.500", img: "/images/bgperkantoraan.jpg", rating: 4.6 }
+    { name: t('atk_prod1_name'), price: "55.000", img: "/images/bgperkantoraan.jpg", rating: 5 },
+    { name: t('atk_prod2_name'), price: "12.000", img: "/images/bgperkantoraan.jpg", rating: 4.8 },
+    { name: t('atk_prod3_name'), price: "28.500", img: "/images/bgperkantoraan.jpg", rating: 4.9 },
+    { name: t('atk_prod4_name'), price: "95.000", img: "/images/bgperkantoraan.jpg", rating: 5 },
+    { name: t('atk_prod5_name'), price: "45.000", img: "/images/bgperkantoraan.jpg", rating: 4.7 },
+    { name: t('atk_prod6_name'), price: "8.500", img: "/images/bgperkantoraan.jpg", rating: 4.6 }
   ];
 
   return (
@@ -23,7 +23,7 @@ export function AtkFeaturedProducts() {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-[1.5px] bg-[#b31b2c]"></div>
-            <span className="text-[#b31b2c] font-black text-[10px] tracking-[0.3em] uppercase italic">Featured</span>
+            <span className="text-[#b31b2c] font-black text-[10px] tracking-[0.3em] uppercase italic">{t('atk_feat_tag')}</span>
             <div className="w-8 h-[1.5px] bg-[#b31b2c]"></div>
           </div>
           <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight italic">{t('atk_feat_title')}</h2>
@@ -54,7 +54,7 @@ export function AtkFeaturedProducts() {
                     <span className="text-white text-xl font-black">{product.price}</span>
                   </div>
                   <button className="text-[#b31b2c] font-black text-[10px] uppercase tracking-widest border-b border-[#b31b2c]/0 hover:border-[#b31b2c] transition-all">
-                    Order via WA
+                    {t('atk_wa_btn')}
                   </button>
                 </div>
               </div>

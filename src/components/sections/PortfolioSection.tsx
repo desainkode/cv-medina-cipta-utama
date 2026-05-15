@@ -8,23 +8,23 @@ export function PortfolioSection() {
   const { t } = useLanguage();
   const projects = [
     {
-      title: 'Company Profile Tech',
+      title: t('port_demo_1_title'),
       client: 'PT Inovasi Digital',
-      type: 'Corporate Website',
+      type: t('port_demo_1_type'),
       tech: ['Next.js', 'Tailwind CSS'],
       image: '/images/perkantoran-website.jpg'
     },
     {
-      title: 'E-Commerce ATK',
+      title: t('port_demo_2_title'),
       client: 'Toko Buku Maju',
-      type: 'Toko Online',
+      type: t('port_demo_2_type'),
       tech: ['React', 'Node.js'],
       image: '/images/bgperkantoraan.jpg'
     },
     {
-      title: 'Sistem Informasi Desa',
+      title: t('port_demo_3_title'),
       client: 'Pemerintah Desa',
-      type: 'Web App',
+      type: t('port_demo_3_type'),
       tech: ['Laravel', 'Bootstrap'],
       image: '/images/perkantoran-website.jpg'
     }

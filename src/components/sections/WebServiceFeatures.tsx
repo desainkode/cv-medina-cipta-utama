@@ -7,17 +7,17 @@ export function WebServiceFeatures() {
   const { t } = useLanguage();
   
   const features = [
-    { title: "Responsive Mobile", icon: Smartphone },
-    { title: "Desain Modern", icon: Layout },
-    { title: "SEO Friendly", icon: Search },
-    { title: "Admin Panel", icon: Settings },
-    { title: "Fast Loading", icon: Zap },
-    { title: "Keamanan Website", icon: Shield },
-    { title: "Domain & Hosting", icon: Globe },
-    { title: "WhatsApp Integration", icon: MessageSquare },
-    { title: "Google Maps", icon: MapPin },
-    { title: "Form Kontak", icon: Mail },
-    { title: "Social Media Integration", icon: Share2 },
+    { title: t('web_feat1'), icon: Smartphone },
+    { title: t('web_feat2'), icon: Layout },
+    { title: t('web_feat3'), icon: Search },
+    { title: t('web_feat4'), icon: Settings },
+    { title: t('web_feat5'), icon: Zap },
+    { title: t('web_feat6'), icon: Shield },
+    { title: t('web_feat7'), icon: Globe },
+    { title: t('web_feat8'), icon: MessageSquare },
+    { title: t('web_feat9'), icon: MapPin },
+    { title: t('web_feat10'), icon: Mail },
+    { title: t('web_feat11'), icon: Share2 },
   ];
 
   return (
@@ -28,7 +28,7 @@ export function WebServiceFeatures() {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
-            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">Features</span>
+            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('web_features_tag')}</span>
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
           </div>
           <h2 className="text-white text-3xl md:text-4xl font-black tracking-tight">{t('web_features_title')}</h2>

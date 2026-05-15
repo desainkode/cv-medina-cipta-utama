@@ -16,22 +16,22 @@ export function CompanyLegal() {
           <div className="w-full lg:w-1/2">
             <div className="flex items-center gap-3 mb-6">
               <ShieldCheck className="text-[#b31b2c] w-6 h-6" />
-              <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">Legality</span>
+              <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('profile_legal_tag')}</span>
             </div>
             <h2 className="text-white text-3xl md:text-4xl font-black leading-tight tracking-tight mb-8">
               {t('profile_legal_title')}
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-10">
-              CV Medina Cipta Utama adalah badan usaha resmi yang terdaftar dan memenuhi seluruh persyaratan hukum yang berlaku di Indonesia.
+              {t('profile_legal_desc')}
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
-                <div className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Nama Perusahaan</div>
+                <div className="text-white/40 text-[10px] font-bold uppercase tracking-widest">{t('profile_legal_name_label')}</div>
                 <div className="text-white font-bold text-lg">CV. Medina Cipta Utama</div>
               </div>
               <div className="flex flex-col gap-2">
-                <div className="text-white/40 text-[10px] font-bold uppercase tracking-widest">NIB</div>
+                <div className="text-white/40 text-[10px] font-bold uppercase tracking-widest">{t('profile_legal_nib_label')}</div>
                 <div className="text-white font-bold text-lg">1234567890123 (Placeholder)</div>
               </div>
             </div>
@@ -44,7 +44,7 @@ export function CompanyLegal() {
                 <MapPin className="text-[#b31b2c] w-6 h-6" />
               </div>
               <div>
-                <h4 className="text-white font-bold mb-2">Alamat Kantor</h4>
+                <h4 className="text-white font-bold mb-2">{t('profile_legal_address_label')}</h4>
                 <p className="text-white/60 text-sm leading-relaxed">{t('footer_address')}</p>
               </div>
             </div>
@@ -53,8 +53,8 @@ export function CompanyLegal() {
                 <Building className="text-[#b31b2c] w-6 h-6" />
               </div>
               <div>
-                <h4 className="text-white font-bold mb-2">Status Usaha</h4>
-                <p className="text-white/60 text-sm leading-relaxed">Aktif & Terdaftar Resmi</p>
+                <h4 className="text-white font-bold mb-2">{t('profile_legal_status_label')}</h4>
+                <p className="text-white/60 text-sm leading-relaxed">{t('profile_legal_status_value')}</p>
               </div>
             </div>
           </div>

@@ -8,23 +8,23 @@ export function BlogSection() {
   const { t, language } = useLanguage();
   const articles = [
     {
-      title: '5 Tips Memilih Website Company Profile yang Tepat untuk Bisnis Anda',
-      category: 'Tips Website',
-      date: '12 Mei 2024',
+      title: t('blog_demo_1_title'),
+      category: t('blog_demo_1_cat'),
+      date: language === 'id' ? '12 Mei 2024' : 'May 12, 2024',
       author: 'Admin',
       image: '/images/perkantoran-website.jpg'
     },
     {
-      title: 'Rekomendasi ATK Wajib untuk Meningkatkan Produktivitas Kantor',
-      category: 'Rekomendasi ATK',
-      date: '08 Mei 2024',
-      author: 'Tim Editorial',
+      title: t('blog_demo_2_title'),
+      category: t('blog_demo_2_cat'),
+      date: language === 'id' ? '08 Mei 2024' : 'May 08, 2024',
+      author: language === 'id' ? 'Tim Editorial' : 'Editorial Team',
       image: '/images/bgperkantoraan.jpg'
     },
     {
-      title: 'Transformasi Digital: Mengapa UMKM Harus Go Online Sekarang?',
-      category: 'Digital Bisnis',
-      date: '02 Mei 2024',
+      title: t('blog_demo_3_title'),
+      category: t('blog_demo_3_cat'),
+      date: language === 'id' ? '02 Mei 2024' : 'May 02, 2024',
       author: 'Admin',
       image: '/images/perkantoran-website.jpg'
     }

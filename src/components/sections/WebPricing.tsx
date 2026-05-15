@@ -9,24 +9,45 @@ export function WebPricing() {
   
   const plans = [
     {
-      name: "Basic",
+      name: t('web_plan_basic'),
       price: "1.500.000",
       icon: Zap,
-      features: ["3 Halaman", "Responsive Mobile", "Form Kontak", "Free Domain & Hosting (1 Thn)", "Revisi 2x"],
+      features: [
+        t('web_feat_pages_3'), 
+        t('web_feat_responsive'), 
+        t('web_feat_contact'), 
+        t('web_feat_domain'), 
+        t('web_feat_revision_2')
+      ],
       popular: false
     },
     {
-      name: "Professional",
+      name: t('web_plan_pro'),
       price: "3.500.000",
       icon: Rocket,
-      features: ["5-10 Halaman", "Premium Design", "SEO Basic Setup", "Admin Panel (CMS)", "WhatsApp Integration", "Google Maps", "Revisi 5x"],
+      features: [
+        t('web_feat_pages_5_10'), 
+        t('web_feat_design'), 
+        t('web_feat_seo'), 
+        t('web_feat_cms'), 
+        t('web_feat_wa'), 
+        t('web_feat_maps'), 
+        t('web_feat_revision_5')
+      ],
       popular: true
     },
     {
-      name: "Enterprise",
-      price: "Custom",
+      name: t('web_plan_ent'),
+      price: t('web_custom_price'),
       icon: Crown,
-      features: ["Custom Website", "Full Feature Request", "Maintenance Support", "Premium UI/UX Design", "Integrasi Sistem", "Prioritas Layanan"],
+      features: [
+        t('web_feat_custom'), 
+        t('web_feat_request'), 
+        t('web_feat_maint'), 
+        t('web_feat_uiux'), 
+        t('web_feat_system'), 
+        t('web_feat_priority')
+      ],
       popular: false
     }
   ];
@@ -39,7 +60,7 @@ export function WebPricing() {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-[1.5px] bg-[#b31b2c]"></div>
-            <span className="text-[#b31b2c] font-black text-[10px] tracking-[0.3em] uppercase italic">Pricing</span>
+            <span className="text-[#b31b2c] font-black text-[10px] tracking-[0.3em] uppercase italic">{t('web_pricing_tag')}</span>
             <div className="w-8 h-[1.5px] bg-[#b31b2c]"></div>
           </div>
           <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight italic">{t('web_pricing_title')}</h2>
@@ -52,7 +73,7 @@ export function WebPricing() {
               
               {plan.popular && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#b31b2c] text-white text-[10px] font-black uppercase tracking-widest px-6 py-2 rounded-full">
-                  Terpopuler
+                  {t('web_popular_label')}
                 </div>
               )}
 
@@ -64,7 +85,7 @@ export function WebPricing() {
                 <div className="flex items-baseline gap-1">
                   <span className="text-white/40 text-sm font-bold uppercase tracking-widest">Rp</span>
                   <span className="text-white text-4xl font-black">{plan.price}</span>
-                  {plan.price !== "Custom" && <span className="text-white/40 text-xs font-bold uppercase tracking-widest ml-1">NET</span>}
+                  {plan.price !== t('web_custom_price') && <span className="text-white/40 text-xs font-bold uppercase tracking-widest ml-1">NET</span>}
                 </div>
               </div>
 
@@ -78,7 +99,7 @@ export function WebPricing() {
               </div>
 
               <Link href="#" className={`w-full py-4 rounded-2xl font-black text-center transition-all ${plan.popular ? 'bg-[#b31b2c] text-white shadow-lg shadow-red-900/40 hover:bg-red-700' : 'bg-white/10 text-white hover:bg-white/20'}`}>
-                Pilih Paket
+                {t('web_select_plan')}
               </Link>
             </div>
           ))}

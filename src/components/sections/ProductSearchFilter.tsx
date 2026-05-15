@@ -26,21 +26,23 @@ export function ProductSearchFilter({
   const [isSortOpen, setIsSortOpen] = useState(false);
   
   const categories = [
-    "Semua",
-    "Alat Tulis", 
-    "Kertas & Buku", 
-    "Printer & Tinta", 
-    "Peralatan Kantor", 
-    "Arsip Dokumen", 
-    "Operasional Kantor"
+    { id: 'all', label: t('prod_cat_all') },
+    { id: 'stationary', label: t('prod_cat_stationary') }, 
+    { id: 'paper', label: t('prod_cat_paper') }, 
+    { id: 'printer', label: t('prod_cat_printer') }, 
+    { id: 'office', label: t('prod_cat_office') }, 
+    { id: 'archive', label: t('prod_cat_archive') }, 
+    { id: 'ops', label: t('prod_cat_ops') }
   ];
 
   const sortOptions = [
-    { label: "Produk Terbaru", value: "terbaru" },
-    { label: "Produk Populer", value: "populer" },
-    { label: "Harga Terendah", value: "murah" },
-    { label: "Harga Tertinggi", value: "mahal" }
+    { label: t('prod_sort_newest'), value: "terbaru" },
+    { label: t('prod_sort_popular'), value: "populer" },
+    { label: t('prod_sort_lowest'), value: "murah" },
+    { label: t('prod_sort_highest'), value: "mahal" }
   ];
+
+  const currentCategoryLabel = categories.find(c => c.id === selectedCategory)?.label || t('prod_cat_all');
 
   return (
     <div className="relative z-40 px-6 md:px-[80px] py-5 bg-transparent transition-all duration-500">
@@ -52,7 +54,7 @@ export function ProductSearchFilter({
             <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-[#b31b2c] transition-colors" size={18} />
             <input 
               type="text" 
-              placeholder="Cari produk ATK..."
+              placeholder={t('prod_search_placeholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-[#111111] border border-white/10 text-white pl-14 pr-6 py-3.5 rounded-xl focus:outline-none focus:border-[#b31b2c]/50 transition-all placeholder:text-white/20 font-medium text-sm shadow-2xl"
@@ -71,7 +73,7 @@ export function ProductSearchFilter({
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#b31b2c]">
                   <LayoutGrid size={16} />
                 </div>
-                <span className="font-bold text-[10px] uppercase tracking-wider truncate">{selectedCategory}</span>
+                <span className="font-bold text-[10px] uppercase tracking-wider truncate">{currentCategoryLabel}</span>
                 <ChevronDown size={14} className={`text-white/20 transition-transform duration-300 ${isCatOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -81,11 +83,11 @@ export function ProductSearchFilter({
                   <div className="absolute top-full mt-2 left-0 w-full min-w-[200px] bg-[#111111] border border-white/10 rounded-xl shadow-2xl z-50 overflow-hidden animate-fade-in">
                     {categories.map((cat) => (
                       <button 
-                        key={cat}
-                        onClick={() => { setSelectedCategory(cat); setIsCatOpen(false); }}
-                        className={`w-full text-left px-5 py-3.5 text-[11px] font-bold uppercase tracking-wider transition-all hover:bg-[#b31b2c]/20 ${selectedCategory === cat ? 'text-[#b31b2c] bg-[#b31b2c]/10' : 'text-white/60'}`}
+                        key={cat.id}
+                        onClick={() => { setSelectedCategory(cat.id); setIsCatOpen(false); }}
+                        className={`w-full text-left px-5 py-3.5 text-[11px] font-bold uppercase tracking-wider transition-all hover:bg-[#b31b2c]/20 ${selectedCategory === cat.id ? 'text-[#b31b2c] bg-[#b31b2c]/10' : 'text-white/60'}`}
                       >
-                        {cat}
+                        {cat.label}
                       </button>
                     ))}
                   </div>

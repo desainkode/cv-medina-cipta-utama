@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "CV. Medina Cipta Utama",
-  description: "Solusi Terpadu untuk Kebutuhan Bisnis Anda",
+  title: "MCU | CV. Medina Cipta Utama",
+  description: "CV. Medina Cipta Utama (MCU) - Solusi Terpadu untuk Kebutuhan Bisnis, Konstruksi, dan Layanan Profesional Anda.",
 };
 
 export default function RootLayout({

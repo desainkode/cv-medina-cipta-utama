@@ -14,18 +14,18 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("Semua");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("terbaru");
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] antialiased selection:bg-[#b31b2c] selection:text-white">
       <Navbar />
-      
+
       {/* 1. Hero Banner Produk */}
       <ProductHero />
 
       {/* 2. Search & Filter Produk */}
-      <ProductSearchFilter 
+      <ProductSearchFilter
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         selectedCategory={selectedCategory}
@@ -35,7 +35,7 @@ export default function ProductsPage() {
       />
 
       {/* 3. Grid Katalog Produk */}
-      <ProductGrid 
+      <ProductGrid
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         selectedCategory={selectedCategory}
@@ -54,9 +54,6 @@ export default function ProductsPage() {
 
       {/* 7. CTA Section */}
       <ProductCta />
-
-      {/* 8. Floating WhatsApp */}
-      <FloatingWhatsApp />
 
       <Footer />
     </main>

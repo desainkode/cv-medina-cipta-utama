@@ -9,26 +9,11 @@ export function WebFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
-    { 
-      q: "Berapa lama pengerjaan website?", 
-      a: "Waktu pengerjaan bervariasi tergantung paket. Paket Basic sekitar 3-7 hari kerja, Professional 10-21 hari kerja, dan Enterprise sesuai kompleksitas fitur." 
-    },
-    { 
-      q: "Apakah bisa custom fitur tertentu?", 
-      a: "Tentu! Kami sangat terbuka untuk fitur kustom. Anda bisa mengonsultasikan kebutuhan spesifik Anda dan kami akan memberikan solusi teknis terbaik." 
-    },
-    { 
-      q: "Apakah sudah termasuk domain dan hosting?", 
-      a: "Ya, untuk paket Basic dan Professional sudah termasuk biaya domain (.com/.id) dan hosting selama 1 tahun pertama." 
-    },
-    { 
-      q: "Bagaimana jika saya ingin melakukan revisi?", 
-      a: "Setiap paket memiliki kuota revisi tertentu. Kami akan memastikan hasil akhir sesuai dengan ekspektasi Anda sebelum website dilaunching." 
-    },
-    { 
-      q: "Apakah website support tampilan mobile?", 
-      a: "Wajib. Semua website yang kami kerjakan menggunakan prinsip 'Mobile-First' dan fully responsive di smartphone, tablet, maupun desktop." 
-    },
+    { q: t('web_faq1_q'), a: t('web_faq1_a') },
+    { q: t('web_faq2_q'), a: t('web_faq2_a') },
+    { q: t('web_faq3_q'), a: t('web_faq3_a') },
+    { q: t('web_faq4_q'), a: t('web_faq4_q') },
+    { q: t('web_faq5_q'), a: t('web_faq5_a') },
   ];
 
   return (
@@ -39,7 +24,7 @@ export function WebFaq() {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-4">
             <HelpCircle className="text-[#b31b2c] w-6 h-6" />
-            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">FAQ</span>
+            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('web_faq_tag')}</span>
           </div>
           <h2 className="text-white text-3xl md:text-4xl font-black tracking-tight">{t('web_faq_title')}</h2>
         </div>

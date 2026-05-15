@@ -22,16 +22,16 @@ export function ProductGrid({
 }: ProductGridProps) {
   const { t } = useLanguage();
 
-  const allProducts = [
-    { id: 1, name: "Pena Gel Premium Black", price: 12000, cat: "Alat Tulis", rating: 4.8, img: "/images/bgperkantoraan.jpg", badge: "New", stock: "In Stock" },
-    { id: 2, name: "Buku Tulis Hardcover A5", price: 35000, cat: "Kertas & Buku", rating: 4.9, img: "/images/perkantoran-website.jpg", badge: "Best Seller", stock: "In Stock" },
-    { id: 3, name: "Kertas HVS A4 80gsm", price: 55000, cat: "Kertas & Buku", rating: 5, img: "/images/bgperkantoraan.jpg", badge: null, stock: "Limited" },
-    { id: 4, name: "Printer Ink Tank L3210", price: 2450000, cat: "Printer & Tinta", rating: 4.7, img: "/images/perkantoran-website.jpg", badge: "Promo", stock: "In Stock" },
-    { id: 5, name: "Stapler Heavy Duty", price: 145000, cat: "Peralatan Kantor", rating: 4.8, img: "/images/bgperkantoraan.jpg", badge: null, stock: "In Stock" },
-    { id: 6, name: "Map Dokumen PVC", price: 15000, cat: "Arsip Dokumen", rating: 4.6, img: "/images/perkantoran-website.jpg", badge: null, stock: "Out of Stock" },
-    { id: 7, name: "Sticky Notes Combo", price: 22500, cat: "Alat Tulis", rating: 4.5, img: "/images/bgperkantoraan.jpg", badge: null, stock: "In Stock" },
-    { id: 8, name: "Tinta Printer Black", price: 95000, cat: "Printer & Tinta", rating: 5, img: "/images/perkantoran-website.jpg", badge: "Best Seller", stock: "In Stock" },
-  ];
+  const allProducts = useMemo(() => [
+    { id: 1, name: t('prod_name_pen'), price: 12000, cat: t('prod_cat_stationary'), catId: 'stationary', rating: 4.8, img: "/images/bgperkantoraan.jpg", badge: t('badge_new'), stock: t('stock_in') },
+    { id: 2, name: t('prod_name_book'), price: 35000, cat: t('prod_cat_paper'), catId: 'paper', rating: 4.9, img: "/images/perkantoran-website.jpg", badge: t('badge_best_seller'), stock: t('stock_in') },
+    { id: 3, name: t('prod_name_hvs'), price: 55000, cat: t('prod_cat_paper'), catId: 'paper', rating: 5, img: "/images/bgperkantoraan.jpg", badge: null, stock: t('stock_limited') },
+    { id: 4, name: t('prod_name_printer'), price: 2450000, cat: t('prod_cat_printer'), catId: 'printer', rating: 4.7, img: "/images/perkantoran-website.jpg", badge: t('badge_promo'), stock: t('stock_in') },
+    { id: 5, name: t('prod_name_stapler'), price: 145000, cat: t('prod_cat_office'), catId: 'office', rating: 4.8, img: "/images/bgperkantoraan.jpg", badge: null, stock: t('stock_in') },
+    { id: 6, name: t('prod_name_map'), price: 15000, cat: t('prod_cat_archive'), catId: 'archive', rating: 4.6, img: "/images/perkantoran-website.jpg", badge: null, stock: t('stock_out') },
+    { id: 7, name: t('prod_name_sticky'), price: 22500, cat: t('prod_cat_stationary'), catId: 'stationary', rating: 4.5, img: "/images/bgperkantoraan.jpg", badge: null, stock: t('stock_in') },
+    { id: 8, name: t('prod_name_ink'), price: 95000, cat: t('prod_cat_printer'), catId: 'printer', rating: 5, img: "/images/perkantoran-website.jpg", badge: t('badge_best_seller'), stock: t('stock_in') },
+  ], [t]);
 
   const filteredProducts = useMemo(() => {
     let result = [...allProducts];
@@ -43,8 +43,8 @@ export function ProductGrid({
       );
     }
 
-    if (selectedCategory !== "Semua") {
-      result = result.filter(p => p.cat === selectedCategory);
+    if (selectedCategory !== 'all') {
+      result = result.filter(p => p.catId === selectedCategory);
     }
 
     result.sort((a, b) => {
@@ -55,11 +55,11 @@ export function ProductGrid({
     });
 
     return result;
-  }, [searchQuery, selectedCategory, sortBy]);
+  }, [searchQuery, selectedCategory, sortBy, allProducts, t]);
 
   const handleWhatsApp = (productName: string) => {
-    const message = encodeURIComponent(`Halo admin, saya ingin menanyakan produk ini: ${productName}`);
-    window.open(`https://wa.me/6281234567890?text=${message}`, '_blank');
+    const message = encodeURIComponent(`${t('prod_wa_msg')}${productName}`);
+    window.open(`https://wa.me/6285804611938?text=${message}`, '_blank');
   };
 
   return (
@@ -94,7 +94,7 @@ export function ProductGrid({
                 <div className="p-6 flex-1 flex flex-col">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-white/20 text-[9px] font-black uppercase tracking-widest">{product.cat}</span>
-                    <span className={`text-[8px] font-bold uppercase tracking-widest ${product.stock === 'Out of Stock' ? 'text-red-500' : product.stock === 'Limited' ? 'text-yellow-500' : 'text-green-500'}`}>
+                    <span className={`text-[8px] font-bold uppercase tracking-widest ${product.stock === t('stock_out') ? 'text-red-500' : product.stock === t('stock_limited') ? 'text-yellow-500' : 'text-green-500'}`}>
                       • {product.stock}
                     </span>
                   </div>
@@ -111,14 +111,14 @@ export function ProductGrid({
 
                     <div className="flex flex-col gap-2">
                       <Link href="#" className="w-full bg-white/5 border border-white/10 text-white py-3 rounded-xl font-bold text-[10px] uppercase tracking-widest text-center hover:bg-white/10 transition-all">
-                        Detail Produk
+                        {t('prod_detail_btn')}
                       </Link>
                       <button 
                         onClick={() => handleWhatsApp(product.name)}
                         className="w-full bg-[#b31b2c] text-white py-3 rounded-xl font-black text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-white hover:text-[#b31b2c] transition-all shadow-lg"
                       >
                         <ShoppingCart size={14} />
-                        Pesan via WhatsApp
+                        {t('prod_wa_btn')}
                       </button>
                     </div>
                   </div>
@@ -131,13 +131,13 @@ export function ProductGrid({
             <div className="w-24 h-24 rounded-full bg-white/5 flex items-center justify-center mb-8">
               <SearchX className="text-white/20 w-12 h-12" />
             </div>
-            <h3 className="text-white font-black text-2xl mb-3 italic tracking-tight">Produk tidak ditemukan</h3>
-            <p className="text-white/40 text-base font-medium">Coba kata kunci lain atau reset filter pencarian Anda.</p>
+            <h3 className="text-white font-black text-2xl mb-3 italic tracking-tight">{t('prod_not_found')}</h3>
+            <p className="text-white/40 text-base font-medium">{t('prod_not_found_desc')}</p>
             <button 
-              onClick={() => { setSearchQuery(""); setSelectedCategory("Semua"); }}
+              onClick={() => { setSearchQuery(""); setSelectedCategory('all'); }}
               className="mt-10 text-[#b31b2c] font-black text-xs uppercase tracking-widest border border-[#b31b2c]/30 px-10 py-5 rounded-2xl hover:bg-[#b31b2c] hover:text-white transition-all shadow-xl"
             >
-              Reset Filter
+              {t('prod_reset_filter')}
             </button>
           </div>
         )}

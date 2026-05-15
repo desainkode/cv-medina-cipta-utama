@@ -8,26 +8,26 @@ export function ProductsSection() {
   const { t, language } = useLanguage();
   const products = [
     {
-      name: 'Kertas HVS A4 80gsm',
-      category: 'Kertas',
+      name: language === 'id' ? 'Kertas HVS A4 80gsm' : 'HVS A4 Paper 80gsm',
+      category: t('prod_cat_paper'),
       price: 'Rp 55.000',
-      image: '/images/bgperkantoraan.jpg' // Using available image as placeholder
+      image: '/images/bgperkantoraan.jpg'
     },
     {
-      name: 'Printer InkJet Pro 100',
-      category: 'Elektronik',
+      name: language === 'id' ? 'Printer InkJet Pro 100' : 'InkJet Pro 100 Printer',
+      category: t('prod_cat_printer'),
       price: 'Rp 2.500.000',
       image: '/images/perkantoran-website.jpg'
     },
     {
-      name: 'Buku Catatan Eksekutif',
-      category: 'Buku',
+      name: language === 'id' ? 'Buku Catatan Eksekutif' : 'Executive Notebook',
+      category: t('prod_cat_paper'),
       price: 'Rp 45.000',
       image: '/images/bgperkantoraan.jpg'
     },
     {
-      name: 'Pena Gel Premium Set',
-      category: 'Alat Tulis',
+      name: language === 'id' ? 'Pena Gel Premium Set' : 'Premium Gel Pen Set',
+      category: t('prod_cat_stationary'),
       price: 'Rp 35.000',
       image: '/images/perkantoran-website.jpg'
     }
@@ -49,7 +49,7 @@ export function ProductsSection() {
             <span className="text-[#b31b2c]">{t('products_title_2')}</span>
           </h2>
         </div>
-
+ 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, index) => (
@@ -68,14 +68,11 @@ export function ProductsSection() {
                   </button>
                 </div>
               </div>
-
+ 
               {/* Product Info */}
               <div className="p-5">
                 <div className="text-[#b31b2c]/80 text-xs font-bold uppercase tracking-wider mb-2">
-                  {product.category === 'Kertas' ? (language === 'id' ? 'Kertas' : 'Paper') :
-                   product.category === 'Elektronik' ? (language === 'id' ? 'Elektronik' : 'Electronics') :
-                   product.category === 'Buku' ? (language === 'id' ? 'Buku' : 'Books') :
-                   product.category === 'Alat Tulis' ? (language === 'id' ? 'Alat Tulis' : 'Stationery') : product.category}
+                  {product.category}
                 </div>
                 <h3 className="text-white font-bold text-lg mb-1 truncate">{product.name}</h3>
                 <div className="flex items-center justify-between mt-4">

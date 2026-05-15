@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Package, ShoppingCart, CheckCircle2, ChevronRight } from 'lucide-react';
+import { Package, ShoppingCart, CheckCircle2, ChevronRight, Phone, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 
 export function AtkServiceHero() {
@@ -32,7 +32,7 @@ export function AtkServiceHero() {
           <div className="w-full lg:w-1/2 flex flex-col items-start animate-fade-up">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
-              <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">Corporate Supply</span>
+              <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('atk_hero_tag')}</span>
             </div>
             <h1 className="text-white text-3xl md:text-[42px] lg:text-[55px] font-black leading-tight tracking-tighter mb-8">
               {t('atk_hero_title')}
@@ -41,12 +41,21 @@ export function AtkServiceHero() {
               {t('atk_hero_subtitle')}
             </p>
             
-            <div className="flex flex-wrap gap-4">
-              <Link href="#kategori" className="bg-[#b31b2c] text-white px-8 py-4 rounded-2xl font-bold text-base hover:bg-red-700 transition-all shadow-[0_10px_30px_rgba(179,27,44,0.3)] hover:-translate-y-1">
-                Lihat Produk
+            <div className="flex flex-wrap gap-5">
+              <Link 
+                href="https://wa.me/6285804611938" 
+                target="_blank"
+                className="bg-[#b31b2c] text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-[#b31b2c] transition-all shadow-2xl hover:-translate-y-2 flex items-center gap-2"
+              >
+                <MessageSquare className="w-4 h-4" />
+                {t('nav_consult')}
               </Link>
-              <Link href="#kontak" className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-2xl font-bold text-base hover:bg-white/10 transition-all hover:-translate-y-1">
-                Hubungi Kami
+              <Link 
+                href="#kontak" 
+                className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all shadow-2xl hover:-translate-y-2 flex items-center gap-2"
+              >
+                <Phone className="w-4 h-4 text-[#b31b2c]" />
+                {t('nav_contact_us')}
               </Link>
             </div>
 
@@ -54,15 +63,15 @@ export function AtkServiceHero() {
             <div className="mt-12 flex flex-wrap gap-6 text-white/50 text-xs font-bold uppercase tracking-widest">
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-[#b31b2c]" />
-                <span>Kualitas Premium</span>
+                <span>{t('atk_benefit_1')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-[#b31b2c]" />
-                <span>Harga Kompetitif</span>
+                <span>{t('atk_benefit_2')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-[#b31b2c]" />
-                <span>Pengiriman Cepat</span>
+                <span>{t('atk_benefit_3')}</span>
               </div>
             </div>
           </div>
@@ -85,8 +94,8 @@ export function AtkServiceHero() {
                   <ShoppingCart className="text-white" />
                 </div>
                 <div>
-                  <div className="text-white font-bold text-sm">Best Seller</div>
-                  <div className="text-white/50 text-[10px]">Premium Stationery</div>
+                  <div className="text-white font-bold text-sm">{t('atk_hero_badge1')}</div>
+                  <div className="text-white/50 text-[10px]">{t('atk_hero_badge1_desc')}</div>
                 </div>
               </div>
             </div>
@@ -97,8 +106,8 @@ export function AtkServiceHero() {
                   <Package className="text-[#b31b2c]" />
                 </div>
                 <div>
-                  <div className="text-white font-bold text-sm">Bulk Order</div>
-                  <div className="text-white/50 text-[10px]">Corporate Pricing</div>
+                  <div className="text-white font-bold text-sm">{t('atk_hero_badge2')}</div>
+                  <div className="text-white/50 text-[10px]">{t('atk_hero_badge2_desc')}</div>
                 </div>
               </div>
             </div>

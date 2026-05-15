@@ -7,10 +7,10 @@ export function AtkWorkflow() {
   const { t } = useLanguage();
   
   const steps = [
-    { title: "Pilih Produk", icon: Search, desc: "Pilih produk ATK yang Anda butuhkan dari katalog kami." },
-    { title: "Hubungi Admin", icon: PhoneCall, desc: "Hubungi tim sales kami via WhatsApp untuk konsultasi stok." },
-    { title: "Konfirmasi", icon: ClipboardCheck, desc: "Konfirmasi pesanan dan detail pengiriman barang." },
-    { title: "Pengiriman", icon: Truck, desc: "Barang dikirim ke lokasi Anda dengan cepat dan aman." }
+    { title: t('atk_order_step1_title'), icon: Search, desc: t('atk_order_step1_desc') },
+    { title: t('atk_order_step2_title'), icon: PhoneCall, desc: t('atk_order_step2_desc') },
+    { title: t('atk_order_step3_title'), icon: ClipboardCheck, desc: t('atk_order_step3_desc') },
+    { title: t('atk_order_step4_title'), icon: Truck, desc: t('atk_order_step4_desc') }
   ];
 
   return (
@@ -21,7 +21,7 @@ export function AtkWorkflow() {
         <div className="flex flex-col items-center text-center mb-20">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
-            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">How to Order</span>
+            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('atk_order_tag')}</span>
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
           </div>
           <h2 className="text-white text-3xl md:text-4xl font-black tracking-tight">{t('atk_order_title')}</h2>

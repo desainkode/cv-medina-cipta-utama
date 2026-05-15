@@ -7,10 +7,10 @@ export function ContactInfoSection() {
   const { t } = useLanguage();
   
   const contacts = [
-    { icon: Phone, label: "WhatsApp", value: "+62 812-3456-7890", link: "https://wa.me/6281234567890" },
-    { icon: Mail, label: "Email", value: "info@medinaciptautama.com", link: "mailto:info@medinaciptautama.com" },
-    { icon: MapPin, label: "Lokasi", value: "Jl. Contoh No. 123, Bandung, Jawa Barat", link: "#" },
-    { icon: Clock, label: "Jam Operasional", value: "Senin - Sabtu: 08.00 - 17.00", link: null }
+    { icon: Phone, label: t('contact_label_wa'), value: "+62 812-3456-7890", link: "https://wa.me/6281234567890" },
+    { icon: Mail, label: t('contact_label_email'), value: "info@medinaciptautama.com", link: "mailto:info@medinaciptautama.com" },
+    { icon: MapPin, label: t('contact_label_location'), value: t('footer_address'), link: "#" },
+    { icon: Clock, label: t('contact_label_hours'), value: t('contact_value_hours'), link: null }
   ];
 
   return (
@@ -21,7 +21,7 @@ export function ContactInfoSection() {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
-            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">Contact</span>
+            <span className="text-[#b31b2c] font-black text-xs tracking-[0.4em] uppercase">{t('contact_tag')}</span>
             <div className="w-12 h-[2px] bg-[#b31b2c]"></div>
           </div>
           <h2 className="text-white text-3xl md:text-4xl font-black tracking-tight">{t('nav_contact')}</h2>
